@@ -1,0 +1,103 @@
+/*Inicio estilos footer*/
+
+.containerFooter {
+    margin-top: 100px;
+    background: rgb(29, 40, 96);
+    background: radial-gradient(circle, rgba(29, 40, 96, 1) 29%, rgba(70, 223, 252, 1) 100%);
+    text-align: justify;
+
+}
+
+.containerFooter-logos {
+    text-align: left;
+
+    a {
+
+        padding-left: 10px;
+    }
+
+    a img {
+        width: 50px;
+        height: 50px;
+    }
+
+    p {
+
+        font-weight: bold;
+        color: #edf1f5;
+        padding-left: 10px;
+
+    }
+}
+
+
+.footerLeft {
+
+    text-align: left;
+    display: none;
+
+    p,
+    a {
+
+        font-weight: bold;
+        color: #edf1f5;
+        padding-left: 10px;
+
+    }
+
+}
+
+/*Fin estilos footer*/
+
+/*Estilos escritorio*/
+@media screen and (min-width:1024px) {
+
+    /* Inicio estilos Footer */
+    .footerLeft {
+
+        background-color: transparent;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .footerLeft {
+
+        p,
+        a {
+            font-weight: bold;
+            color: #eeeff0;
+            padding-left: 10px;
+        }
+
+        a {
+            font-size: 10px;
+        }
+    }
+
+    .containerFooter-logos {
+        text-align: left;
+        float: right;
+
+        a {
+            padding-left: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+
+            font-weight: bold;
+            color: #edf1f5;
+            padding-left: 10px;
+
+        }
+    }
+
+    /* Fin estilos footler */
+
+}
