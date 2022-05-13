@@ -1,0 +1,356 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@import "footer";
+@import "content";
+
+//Variables
+$font-color: rgb(0, 17, 255);
+$font-color-second: #dddbdb;
+$font :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+/*Inicio estilos de menu*/
+.body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(234, 245, 239);
+
+}
+
+hr {
+    display: block;
+    margin-left: 8em;
+    margin-right: 8em;
+    border-style: inset;
+    border-width: 2px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.imagenSection {
+    display: none;
+
+}
+
+.control-menu a span {
+    display: inline-block;
+    height: 40px;
+    text-indent: -9999px;
+    width: 40px;
+}
+
+.control-menu .open {
+    background-image: url("../images/open-menu.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.control-menu .close {
+    background-image: url("../images/close-menu.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+nav {
+
+    background: rgb(29, 40, 96);
+    background: radial-gradient(circle, rgba(29, 40, 96, 1) 29%, rgba(70, 223, 252, 1) 100%);
+}
+
+ul,
+li {
+    list-style: outside none none;
+}
+
+ul.nav-items {
+
+    clear: both;
+    height: 0;
+    overflow: hidden;
+
+    li {
+        display: block;
+    }
+
+    a {
+        border-top: 2px dotted $font-color-second;
+        color: rgb(12, 12, 12);
+        display: block;
+        height: 3em;
+        line-height: 3em;
+        margin: 0 1.3em;
+        text-decoration: inherit;
+    }
+}
+
+
+ul.nav-items li a:hover {
+
+    background-color:
+        #30AADD;
+}
+
+ul.nav-items li:first-child a {
+    border-top: 2px solid transparent;
+}
+
+ul.nav-items li a span {
+    border-left: 3px solid;
+    height: 3.2em;
+    padding: 0.4em 0.5em;
+}
+
+
+#logo {
+    float: left;
+    padding: 0 0 0;
+}
+
+header div#logo img {
+    height: 60px;
+    width: 100px;
+    margin: 0.2em;
+}
+
+/*El menú cambia su altura y su color de fondo*/
+#navigation:target ul.nav-items {
+    background: #43919B none repeat scroll 0 0;
+    height: auto;
+}
+
+
+/*Al hacer clic sobre el enlace que abre el menú éste desaparece*/
+.close {
+    display: none;
+}
+
+#navigation:target {
+    .open {
+        display: none;
+    }
+
+    .close {
+        display: block;
+    }
+}
+
+/* Al hacer clic sobre el enlace que abre el menú aparece el enlace .close que previamente estaba oculto*/
+
+#indice {
+    a span {
+        border-color: #ff6633;
+    }
+}
+
+#consulta {
+    a span {
+        border-color: #bda94d;
+    }
+}
+
+#nosotros {
+    a span {
+        border-color: #5887bc;
+    }
+}
+
+#inscripcion {
+    a span {
+        border-color: #00a2b7;
+    }
+}
+
+#cursos {
+    a span {
+        border-color: #639bf2;
+    }
+}
+
+/* Fin estilos de menu */
+
+
+
+/*Inicio estilos de formularios (inscripcion y contacto)*/
+.inscripcion2 {
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 25px;
+
+    img {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+.button {
+    border: ridge;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color:$font-color;
+
+}
+
+h2 {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-family:$font;
+    color: $font-color;
+    font-size: 40px;
+}
+
+
+/*Estilos escritorio*/
+@media screen and (min-width:1024px) {
+    .inscripcion2 {
+        img {
+            width: 400px;
+            height: 400px;
+        }
+
+    }
+
+    h1 {
+        text-align: center;
+        padding: 1em;
+        font-family: $font;
+        font-size: xx-large;
+        color: $font-color;
+        animation-duration: 4s;
+        animation-name: slidein;
+
+    }
+
+    .grid-container {
+        width: 80%;
+
+    }
+
+    .animation {
+        float: left;
+        width: 200px;
+        display: flex;
+        background-color: rgb(131, 58, 180);
+        padding: 0 0 0;
+        margin: 0.2em;
+        opacity: 1;
+        animation-name: fade-in;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-duration: 2s;
+        animation-delay: .5s;
+    }
+
+    @keyframes fade-in {
+        0% {
+            transform: translateX(80px);
+            opacity: 0;
+            background-color:$font-color;
+        }
+
+        50% {
+            transform: translateX(20px);
+            opacity: 0.5px;
+            background-color: #5887bc;
+        }
+
+        100% {
+            transform: rotateX(0px);
+            opacity: 1px;
+            background-color: $font-color-second;
+        }
+    }
+
+
+
+    .imagenSection {
+        display: block;
+        width: 100%;
+
+    }
+
+    .control-menu {
+        .open {
+            background-position: right;
+            margin-right: 0.5em;
+        }
+
+        .close {
+            background-position: right;
+            margin-right: 0.5em;
+        }
+
+    }
+
+    ul.nav-items {
+        margin: 0;
+        text-align: center;
+        overflow: hidden;
+
+        li {
+            margin-left: 8.8em;
+            float: left;
+            margin-left: 3em;
+
+        }
+
+        li a:hover {
+
+            background-color:#30AADD;
+        }
+
+        li:first-child a {
+            border-top: 2px solid transparent;
+        }
+
+        li a span {
+            border-left: 3px solid;
+            height: 3.2em;
+            padding: 0.4em 0.5em;
+        }
+
+        a {
+            border-top: 2px none $font-color-second;
+            color: rgb(12, 12, 12);
+            display: inline-block;
+            height: 3em;
+            line-height: 3em;
+            margin: 0 1.3em;
+            text-decoration: inherit;
+        }
+    }
+
+
+    .flex-courses {
+
+        p,
+        div {
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+
+}
