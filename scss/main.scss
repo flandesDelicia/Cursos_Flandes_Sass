@@ -9,10 +9,31 @@
 @import "footer";
 @import "content";
 
+
+//mapas
+$nav-items :('#indice' : #ff6633,
+    '#consulta': #bda94d,
+    '#nosotros': #5887bc,
+    '#inscipcion': #00a2b7,
+    '#cursos':#639bf2);
+
+@each $nav,
+$color in $nav-items {
+    #{$nav} {
+        a span {
+            border-color: $color;
+        }
+    }
+
+}
+
 //Variables
 $font-color: rgb(0, 17, 255);
 $font-color-second: #dddbdb;
-$font :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$font :'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
 
 
 /*Inicio estilos de menu*/
@@ -46,6 +67,7 @@ header {
 
 .control-menu a span {
     display: inline-block;
+    text-align: right;
     height: 40px;
     text-indent: -9999px;
     width: 40px;
@@ -53,14 +75,17 @@ header {
 
 .control-menu .open {
     background-image: url("../images/open-menu.png");
-    background-position: center center;
+    background-position: right;
+    margin-right: 0.5em;
     background-repeat: no-repeat;
     display: block;
+
 }
 
 .control-menu .close {
     background-image: url("../images/close-menu.png");
-    background-position: center center;
+    background-position: right;
+    margin-right: 0.5em;
     background-repeat: no-repeat;
     display: none;
 }
@@ -148,38 +173,6 @@ header div#logo img {
     }
 }
 
-/* Al hacer clic sobre el enlace que abre el menú aparece el enlace .close que previamente estaba oculto*/
-
-#indice {
-    a span {
-        border-color: #ff6633;
-    }
-}
-
-#consulta {
-    a span {
-        border-color: #bda94d;
-    }
-}
-
-#nosotros {
-    a span {
-        border-color: #5887bc;
-    }
-}
-
-#inscripcion {
-    a span {
-        border-color: #00a2b7;
-    }
-}
-
-#cursos {
-    a span {
-        border-color: #639bf2;
-    }
-}
-
 /* Fin estilos de menu */
 
 
@@ -209,14 +202,14 @@ header div#logo img {
     font-size: 25px;
     margin: 4px 2px;
     cursor: pointer;
-    background-color:$font-color;
+    background-color: $font-color;
 
 }
 
 h2 {
     padding-top: 20px;
     padding-bottom: 30px;
-    font-family:$font;
+    font-family: $font;
     color: $font-color;
     font-size: 40px;
 }
@@ -240,7 +233,6 @@ h2 {
         color: $font-color;
         animation-duration: 4s;
         animation-name: slidein;
-
     }
 
     .grid-container {
@@ -263,23 +255,18 @@ h2 {
         animation-delay: .5s;
     }
 
+
     @keyframes fade-in {
         0% {
-            transform: translateX(80px);
-            opacity: 0;
-            background-color:$font-color;
+            @include frames(translateX(80px), 0, $font-color);
         }
 
         50% {
-            transform: translateX(20px);
-            opacity: 0.5px;
-            background-color: #5887bc;
+            @include frames(translateX(20px), 0.5px, #5887bc);
         }
 
         100% {
-            transform: rotateX(0px);
-            opacity: 1px;
-            background-color: $font-color-second;
+            @include frames(rotateX(0px), 1px, $font-color-second);
         }
     }
 
@@ -318,7 +305,7 @@ h2 {
 
         li a:hover {
 
-            background-color:#30AADD;
+            background-color: #30AADD;
         }
 
         li:first-child a {
@@ -351,6 +338,8 @@ h2 {
             padding: 10px;
         }
     }
+
+
 
 
 }
